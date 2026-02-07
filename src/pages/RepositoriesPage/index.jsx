@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Sidebar, Main} from '.styles';
+import {Container, Sidebar, Main} from './styles';
 
 export default function RepositoriesPage() {
     return (

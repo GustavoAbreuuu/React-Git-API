@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const container = styled.main`
+export const Container = styled.main`
     display: flex;
     min-height: 100vh;
 
@@ -17,7 +17,7 @@ export const Sidebar = styled.aside`
 `;
 
 export const Main = styled.section`
-    background: ${(props) => props.theme.color.container};
+    background: ${(props) => props.theme.colors.container};
     width: 100%;
     height: 100vh;
     padding: 4rem;
