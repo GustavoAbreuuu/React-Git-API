@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.main`
     display: flex;
     min-height: 100vh;
+    color: ${(props) => props.theme.colors.white};
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
         flex-direction: column;
@@ -22,6 +23,7 @@ export const Main = styled.section`
     height: 100vh;
     padding: 4rem;
     overflow-y: hidden;
+    font-size: 1.6rem;
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
         height: 100%;
@@ -31,4 +33,3 @@ export const Main = styled.section`
         padding: 4rem 2rem;
     }
 `;
-

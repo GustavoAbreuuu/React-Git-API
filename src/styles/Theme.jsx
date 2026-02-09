@@ -3,13 +3,6 @@ import React from "react";
 
 import { ThemeProvider } from "styled-components";
 
-const round = (num) =>
-  num
-    .toFixed(7)
-    .replace(/(\.[0-9]+?)0+$/, "$1")
-    .replace(/\.0$/, "");
-const rem = (px) => `${round(px / 16)}rem`;
-
 export const theme = {
   colors: {
     white: "#FFFFFF",
@@ -45,21 +38,25 @@ export const theme = {
     link: '#3498db',
   },
   fontFamily: {
-    heading: ["IBM Plex Sans", "sans-serif"].join(","),
-    sans: ["Open Sans", "Arial", "Helvetica", "sans-serif"].join(","),
-    mono: ["IBM Plex Mono", "serif"].join(","),
+    heading: ["IBM Plex Sans", "sans-serif"].join(','),
+    sans: ["Open Sans", "Arial", "Helvetica", "sans-serif"].join(','),
+    mono: ["IBM Plex Mono", "serif"].join(','),
   },
-  fontSize: {
-    xs: rem(10),
-    sm: rem(12),
-    md: rem(14),
-    base: rem(16),
-    lg: rem(18),
-    xl: rem(20),
-    "2xl": rem(24),
-    "3xl": rem(32),
-    "4xl": rem(40),
-    "5xl": rem(64),
+
+    fontSizes: {
+    title: '2rem',
+    subtitle: '1.8rem',
+    normal: '1.6rem',
+    small: '1.1rem',
+  },
+
+  breakpoints: {
+    xs: '0',
+    sm: '57.6rem',
+    md: '76.8rem',
+    lg: '99.2rem',
+    xl: '120rem',
+    xxl: '140rem',
   },
 };
 
