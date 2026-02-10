@@ -1,31 +1,53 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MdGroup, MdLocationCity, MdWork, MdLink } from 'react-icons/md';
 import { Container, Header, Avatar, Login, Name, Inner, Data } from './styles';
 
-export default function Profile() {
+export default function Profile({ user }) {
     return (
         <Container>
             <Header>
-                <Avatar src="https://avatars.githubusercontent.com/u/147453905?v=4"/>
-                <Login>gustavoabreu</Login>
-                <Name>Gustavo Abreu</Name>
+                <Avatar src={user.avatar_url} />
+                <Login>{user.login}</Login>
+                <Name>{user.name}</Name>
             </Header>
             <Inner>
                 <Data>
                     <MdGroup size={20} />
-                    30&nbsp;<i>seguidores</i>&nbsp;&middot;&nbsp;10&nbsp;<i>seguindo</i>
+                    {user.following}&nbsp;<i>seguidores</i>&nbsp;&middot;&nbsp;{user.followers}&nbsp;<i>seguindo</i>
                 </Data>
+                {user.company && (
                 <Data>
-                    <MdWork size={20} /> Dev
+                    <MdWork size={20} /> {user.company}
                 </Data>
+                )}
+                {user.location && (
                 <Data>
-                    <MdLocationCity size={20} /> Florianópolis
+                    <MdLocationCity size={20} /> {user.location}
                 </Data>
+                )}
+                {user.blog && (
                 <Data>
                     <MdLink size={20} />&nbsp; 
-                    <a href="https://github.com/GustavoAbreuuu">github.com/GustavoAbreuuu</a>
+                    <a href={user.blog} target='_blank' rel='noopener noreferrer'>
+                        {user.blog}
+                    </a>
                 </Data>
+                )}
             </Inner>
         </Container>
     );
 }
+
+Profile.propTypes = {
+    user: PropTypes.shape({
+        login: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        avatar_url: PropTypes.string.isRequired,
+        followers: PropTypes.number.isRequired,
+        following: PropTypes.number.isRequired,
+        company: PropTypes.string,
+        blog: PropTypes.string,
+        location: PropTypes.string,
+    }).isRequired,
+};   
