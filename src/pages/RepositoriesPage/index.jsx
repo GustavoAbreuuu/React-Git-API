@@ -3,7 +3,8 @@ import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
 import { Container, Sidebar, Main } from './styles';
-
+import { getLangsFrom } from '../../services/api';
+ 
 export default function RepositoriesPage() {
     const user = {
         login: "gustavoabreuuu",
@@ -16,11 +17,28 @@ export default function RepositoriesPage() {
         location: "Florianópolis. Brasil",
     };
 
+    const repositories = [
+        { name: 'Repo 1', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
+        },
+        { name: 'Repo 2', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
+        },
+        { name: 'Repo 3', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'PHP',
+        },
+        { name: 'Repo 4', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: null,
+        },
+        { name: 'Repo 5', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Typescript',
+        },
+        { name: 'Repo 6', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Ruby',
+        },
+    ];
+
+    const languages = getLangsFrom(repositories);
+
     return (
         <Container>
             <Sidebar>
                <Profile user={user} /> 
-               <Filter />
+               <Filter languages={languages} />
             </Sidebar>
             <Main>
                 <Repositories />
