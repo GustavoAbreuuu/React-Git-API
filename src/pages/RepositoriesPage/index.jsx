@@ -18,17 +18,17 @@ export default function RepositoriesPage() {
     };
 
     const repositories = [
-        { name: 'Repo 1', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
+        { id: 1, name: 'Repo 1', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
         },
-        { name: 'Repo 2', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
+        { id: 2, name: 'Repo 2', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
         },
-        { name: 'Repo 3', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'PHP',
+        {  id: 3, name: 'Repo 3', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'PHP',
         },
-        { name: 'Repo 4', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: null,
+        { id: 4, name: 'Repo 4', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: null,
         },
-        { name: 'Repo 5', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Typescript',
+        { id: 5, name: 'Repo 5', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Typescript',
         },
-        { name: 'Repo 6', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Ruby',
+        { id: 6, name: 'Repo 6', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Ruby',
         },
     ];
 
@@ -41,7 +41,7 @@ export default function RepositoriesPage() {
                <Filter languages={languages} />
             </Sidebar>
             <Main>
-                <Repositories />
+                <Repositories repositories={repositories} />
             </Main>
         </Container>
     );
