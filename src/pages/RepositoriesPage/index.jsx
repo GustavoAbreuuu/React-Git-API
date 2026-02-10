@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from './Profile';
 import Filter from './Filter';
+import Repositories from './Repositories';
 import { Container, Sidebar, Main } from './styles';
 
 export default function RepositoriesPage() {
@@ -11,7 +12,7 @@ export default function RepositoriesPage() {
                <Filter />
             </Sidebar>
             <Main>
-                Main
+                <Repositories />
             </Main>
         </Container>
     );

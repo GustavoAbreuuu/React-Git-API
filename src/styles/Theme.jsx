@@ -33,6 +33,7 @@ export const theme = {
     danger: '#f37272',
     light: '#ecf0f1',
     dark: '#233240',
+    champagneDark: '#bdc3c7',
     background: '#191919',
     container: '#2d2d2d',
     text: '#fff',
@@ -45,10 +46,11 @@ export const theme = {
   },
 
     fontSizes: {
-    title: '2rem',
-    subtitle: '1.8rem',
     normal: '1.6rem',
-    small: '1.1rem',
+    small: '1.28rem',
+    large: '1.92rem',
+    title: '2.8rem',
+    subtitle: '2rem',
   },
 
   breakpoints: {
