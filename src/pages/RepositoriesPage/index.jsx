@@ -1,46 +1,41 @@
-import React, { useState }from 'react';
-
+import React, { useState, useEffect }from 'react';
 import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
 
-import { Container, Sidebar, Main } from './styles';
-import { getLangsFrom } from '../../services/api';
+import { Loading, Container, Sidebar, Main } from './styles';
+import { getUser, getRepos, getLangsFrom } from '../../services/api';
  
 export default function RepositoriesPage() {
+    const [user, setUser] = useState();
+    const [repositories, setRepositories] = useState();
+    const [languages, setLanguages] = useState();
     const [currentLanguage, setCurrentLanguage] = useState();
+    const [loading, setLoading] = useState(true);
 
-    const user = {
-        login: "gustavoabreuuu",
-        name: "Gustavo",
-        avatar_url: "https://avatars.githubusercontent.com/u/147453905?v=4",
-        followers: 4,
-        following: 4,
-        company: null,
-        blog: "https://github.com/GustavoAbreuuu",
-        location: "Florianópolis. Brasil",
-    };
+    useEffect(() => {
+        const loadData = async () => {
+            const [userResponse, repositoriesResponse] = await Promise.all([
+                getUser('GustavoAbreuuu'),
+                getRepos('GustavoAbreuuu'),
+            ]);
 
-    const repositories = [
-        { id: 1, name: 'Repo 1', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
-        },
-        { id: 2, name: 'Repo 2', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Javascript',
-        },
-        {  id: 3, name: 'Repo 3', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'PHP',
-        },
-        { id: 4, name: 'Repo 4', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: null,
-        },
-        { id: 5, name: 'Repo 5', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Typescript',
-        },
-        { id: 6, name: 'Repo 6', description: 'Descrição', html_url: 'https://github.com/GustavoAbreuuu', language: 'Ruby',
-        },
-    ];
-
-    const languages = getLangsFrom(repositories);
+            setUser(userResponse.data);
+            setRepositories(repositoriesResponse.data);
+            setLanguages(getLangsFrom(repositoriesResponse.data));
+            setLoading(false);
+        };
+        
+        loadData();
+    }, []);
 
     const onFilterClick = (language) => {
         setCurrentLanguage(language);
     };
+
+    if (loading) {
+        return <Loading>Carregando...</Loading>;
+    }
 
     return (
         <Container>
