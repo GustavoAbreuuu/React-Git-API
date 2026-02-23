@@ -2,8 +2,6 @@
 
 > Uma aplicação Front-end moderna e responsiva para explorar perfis e repositórios do GitHub, com análise estatística de linguagens.
 
-<img width="1909" height="864" alt="Captura de tela 2026-02-23 052135" src="https://github.com/user-attachments/assets/593cc193-7131-4d02-9202-82f3d4355aab" />
-
 ## 📖 Sobre o Projeto
 
 O **GitHub Repositories Explorer** é uma aplicação Single Page Application (SPA) desenvolvida para consumir a API pública do GitHub. O objetivo principal é oferecer uma experiência de busca fluida, onde o usuário pode localizar um perfil e visualizar seus repositórios de forma organizada.
@@ -27,7 +25,7 @@ O projeto foi construído com uma stack moderna focado em performance e escalabi
 ### 1. Busca e Navegação
 Interface limpa para entrada de usuário (`/:login`). Validação de busca e redirecionamento para rota dinâmica.
 
-![Tela Inicial]([INSIRA AQUI A CAPTURA DA TELA INICIAL COM O CAMPO DE BUSCA])
+<img width="1909" height="864" alt="Captura de tela 2026-02-23 052135" src="https://github.com/user-attachments/assets/2f49c78e-af79-4798-8286-d884aed988f4" />
 
 ### 2. Dashboard do Usuário (Sidebar)
 Exibição detalhada com Avatar, Seguidores, Seguindo, Empresa, Localização e Blog. Dados tratados para não quebrar o layout caso estejam ausentes na API.
@@ -64,4 +62,19 @@ Toda a identidade visual (cores, espaçamentos, fontes e breakpoints) está cent
 color: ${(props) => props.theme.colors.gray600};
 font-family: ${(props) => props.theme.fontFamily.sans};
 ```
-
+1. Clone o repositório.
+```bash
+git clone [https://github.com/GustavoAbreuuu/React-Git-API.git](https://github.com/GustavoAbreuuu/React-Git-API.git)
+```
+2. Instale as dependências.
+```bash
+npm install
+```
+3. Crie um arquivo .env na raiz baseado no .env.example.
+```bash
+VITE_API_BASE_URL=[https://api.github.com](https://api.github.com)
+```
+4. Inicie o servidor de desenvolvimento
+```bash
+npm run dev
+```
