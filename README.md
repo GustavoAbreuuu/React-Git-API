@@ -62,19 +62,19 @@ Toda a identidade visual (cores, espaçamentos, fontes e breakpoints) está cent
 color: ${(props) => props.theme.colors.gray600};
 font-family: ${(props) => props.theme.fontFamily.sans};
 ```
-## 1. Clone o repositório.
+### 1. Clone o repositório.
 ```bash
 git clone [https://github.com/GustavoAbreuuu/React-Git-API.git](https://github.com/GustavoAbreuuu/React-Git-API.git)
 ```
-## 2. Instale as dependências.
+### 2. Instale as dependências.
 ```bash
 npm install
 ```
-## 3. Crie um arquivo .env na raiz baseado no .env.example.
+### 3. Crie um arquivo .env na raiz baseado no .env.example.
 ```bash
 VITE_API_BASE_URL=[https://api.github.com](https://api.github.com)
 ```
-## 4. Inicie o servidor de desenvolvimento
+### 4. Inicie o servidor de desenvolvimento
 ```bash
 npm run dev
 ```
