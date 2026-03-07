@@ -1,6 +1,6 @@
 # 🚀 API GitHub
 
-> Uma aplicação Front-end moderna e responsiva para explorar perfis e repositórios do GitHub, com análise estatística de linguagens.
+ Uma aplicação Front-end moderna e responsiva para explorar perfis e repositórios do GitHub, com análise estatística de linguagens.
 
 ## 📖 Sobre o Projeto
 
